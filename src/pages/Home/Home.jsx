@@ -4,7 +4,11 @@ import Ofertas from '../../assetsImage/img/Ofertas.png';
 import Pagos from '../../assetsImage/img/Pagos.png';
 import styled from 'styled-components';
 import  Hero  from '../../assetsImage/img/8BitHero.jpg';
-import { BenefitSectionStyle, BenefitContStyle, BenefitCardContStyle, BenefitCardImgStyle, BenefitDescriptionStyle } from "./BenefitStyle"
+import { BenefitSectionStyle, BenefitContStyle, BenefitCardContStyle, BenefitCardImgStyle, BenefitDescriptionStyle } from "./BenefitStyle";
+import { Products } from './ProductsSectStyle';
+import ProductsCards from '../../components/Products/ProductsCards';
+import ProductCard from '../../components/Products/ProductCard';
+import Categories from '../../components/Categories/Categories';
 
 
 const HeroContainerStyled = styled.section`
@@ -114,6 +118,15 @@ const Home = () => {
 
 
     </BenefitSectionStyle>
+
+    <Products>
+
+      <Categories />
+      <ProductsCards />
+      
+
+    </Products>
+
     
     </>
   )

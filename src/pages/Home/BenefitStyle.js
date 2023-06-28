@@ -18,7 +18,7 @@ import styled from 'styled-components';
 export const BenefitContStyle = styled.div `
 
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     gap: 30px;
     width: 90%;
