@@ -23,7 +23,7 @@ export const ProductsCategory = styled.button`
 	width: 100px;
     height: 40px;
 	font-weight: 600;
-	background: #333399;
+	background-color: ${({active}) => active ? "purple" : "#333399"} ;
 	color: white;
 	border: none;
 	cursor: pointer;

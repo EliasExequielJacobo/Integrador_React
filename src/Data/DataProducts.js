@@ -1,7 +1,7 @@
 export const productsData = [
     {
         id:1,
-        name:"Sephiroth Funko Pop",
+        name:"Sephiroth figura",
         brand: "Square Enix",
         subTitle:"Figura de Sephiroth, antagonista de Final fantasy 7 - Square Enix",
         bid:250,
@@ -54,3 +54,16 @@ export const productsData = [
         img: "https://vgboxart.com/boxes/PS4/75114-silent-hill-revival-collection.jpg",
     },
 ];
+
+
+
+export const Products = productsData.reduce((acc, product) => {
+  if (!acc[product.category]) {
+    acc[product.category] = [];
+  }
+
+  acc[product.category] = [...acc[product.category], product];
+
+  return acc;
+}, {});
+
