@@ -1,27 +1,32 @@
 import React from 'react'
 import { CardQuantityContainerSty, CartCardBtn, CartCardCountSty, CartCardPriceStyled, CartCardTextContainerStyled, CartCardTitleStyled, ProductCardCartContainerSty } from './ModalCartStyle'
+import { useDispatch } from 'react-redux'
+import { addToCart, removeItem } from '../../../Redux/cart/cartSlice';
 
-const ModalCartCard = () => {
+const ModalCartCard = ({name,img,id,bid,quantity}) => {
+  const dispatch = useDispatch();
+
+
   return (
     <>
     
     <ProductCardCartContainerSty>
-        <img src='https://s.pacn.ws/1/p/yq/final-fantasy-vii-remake-statuette-sephiroth-625009.1.jpg?v=qm63zt&quality=72&width=1024&crop=998,998' />
+        <img src={img} alt={name}/>
 
         <CartCardTextContainerStyled>
 
             
-         <CartCardTitleStyled> Sephiroth figura  </CartCardTitleStyled>
-         <CartCardPriceStyled> $ 250 </CartCardPriceStyled>
+         <CartCardTitleStyled> {name} </CartCardTitleStyled>
+         <CartCardPriceStyled> $ {bid} </CartCardPriceStyled>
         
          <CardQuantityContainerSty>
 
-            <CartCardBtn> - </CartCardBtn>
+            <CartCardBtn onClick={() => dispatch(removeItem(id))}> - </CartCardBtn>
 
-            <CartCardCountSty> 1 </CartCardCountSty>
+            <CartCardCountSty> {quantity} </CartCardCountSty>
 
             
-            <CartCardBtn> + </CartCardBtn>
+            <CartCardBtn onClick={() => dispatch(addToCart({name,img,id,bid,quantity}))}> + </CartCardBtn>
 
          </CardQuantityContainerSty>
 

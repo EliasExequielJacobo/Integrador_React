@@ -8,10 +8,14 @@ import { ProductsCard,
          ProductsInfoCont,
 
 } from './ProductCardStyle';
+import { useDispatch } from "react-redux";
+import { addToCart } from '../../Redux/cart/cartSlice';
 
 
+const ProductCard = ({name, img, bid, subTitle, id}) => {
 
-const ProductCard = ({name, img, bid, subTitle}) => {
+  const dispatch = useDispatch();
+
   return (
 
     <>
@@ -30,7 +34,7 @@ const ProductCard = ({name, img, bid, subTitle}) => {
         <ProductsPriceCont>
 
         <ProductsPrice> $ { bid } </ProductsPrice>
-        <ProductsCardButton> Add </ProductsCardButton>
+        <ProductsCardButton onClick={() => dispatch(addToCart({name, img, bid, subTitle, id}))} > Add </ProductsCardButton>
 
         </ProductsPriceCont>
 

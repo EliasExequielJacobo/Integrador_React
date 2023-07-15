@@ -17,8 +17,13 @@ const NavbarContainer = styled.header`
   background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
   height: 60px;
   /* padding-left: 850px; */
-  padding: 0px 50px ;
+  padding: 30px 50px ;
   margin-bottom: 50px;
+  gap: 30px;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  position: fixed;
 `;
 
 const LinkContainer = styled.ul`
@@ -45,14 +50,14 @@ height: 50px;
 
 const Navbar = () => {
 
-  const [hiddenCart, setHiddenCart] = useState(true);
+  // const [hiddenCart, setHiddenCart] = useState(true);
 
 
   return (
    
     
     <NavbarContainer>
-        <ModalCart hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
+        <ModalCart />
 
         <LogoSty src={ logo } alt="8 bit logo" />
       
@@ -66,7 +71,7 @@ const Navbar = () => {
 
             <CartNavStyled>
 
-              <CartIcon hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
+              <CartIcon />
 
             </CartNavStyled>
 

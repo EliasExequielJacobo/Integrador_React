@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Products = styled.section`
-	margin-top: 100px;
+	/* margin-top: 100px; */
 	display: flex;
 	align-items: center;
 	justify-content: center;

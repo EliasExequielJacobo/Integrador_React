@@ -20,6 +20,7 @@ const HeroContainerStyled = styled.section`
   max-width: 1300px;
   margin: 0 auto;
   margin-bottom: 100px;
+  margin-top: 120px;
   
 `;
 

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export const ContainerStyled = styled(motion.div)`
 
   position: absolute;
-  top:  calc(29px + 2rem);
+  top:  calc(28px + 2rem);
   right: 0;
   z-index: 99;
   display: flex;
@@ -125,6 +125,10 @@ export const CartBuyBtn = styled.button`
     padding: 5px 10px;
     color: whitesmoke;
     cursor: pointer;
+    &:disabled {
+		cursor: not-allowed;
+		color: gray;
+	}
 
 `;
 
@@ -138,6 +142,10 @@ export const CartDeletBtn = styled.button`
     padding: 5px 10px;
     color: whitesmoke;
     cursor: pointer;
+    &:disabled {
+		cursor: not-allowed;
+		color: gray;
+	}
 
 `;
 

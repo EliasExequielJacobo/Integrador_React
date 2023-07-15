@@ -2,8 +2,39 @@ import React from 'react'
 import { AnimatePresence } from 'framer-motion';
 import { ButtonContainerStyled, CartBuyBtn, CartDeletBtn, CloseButtonContainerStyled, CloseButtonStyled, ContainerStyled, MainContainerStyled, PriceContainerStyled, ProductsWrapperStyled, TitleStyled, TotalPrice } from './ModalCartStyle';
 import ModalCartCard from './ModalCartCard';
+import { useDispatch, useSelector } from 'react-redux';
+import { borrarCarrito, clearCart, mostrarCarrito } from '../../../Redux/cart/cartSlice';
 
-const ModalCart = ({ hiddenCart, setHiddenCart }) => {
+const ModalCart = () => {
+  const hiddenCart = useSelector (state => state.cart.hidden)
+  const dispatch = useDispatch();
+
+  const { cartItems } = useSelector ( state => state.cart );
+
+  const totalPrice = cartItems.reduce((acc, item) =>{
+    return (acc += item.bid * item.quantity)
+  }, 0)
+
+  const confirmarVaciarCarrito = (confirmMsg, succesMsg) =>{
+    if(!cartItems.length) return;
+    if (window.confirm(confirmMsg)) {
+      dispatch(borrarCarrito());
+      alert(succesMsg);
+    };
+  }
+
+  const vaciarTodo = () =>{
+
+    confirmarVaciarCarrito("¿Desea borrar todo?", "Productos borrados");
+
+  };
+
+  const comprarTodo = () =>{
+
+    confirmarVaciarCarrito("¿Desea realizar su compra?", "Compra exitosa, muchas gracias")
+
+  }
+
   return (
     <>
     
@@ -18,7 +49,7 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
           key='cart-modal'
           >
 
-            <CloseButtonContainerStyled onClick={() => setHiddenCart(!hiddenCart)}>
+            <CloseButtonContainerStyled onClick={() => dispatch(mostrarCarrito())}>
                 <CloseButtonStyled>
                         x
                 </CloseButtonStyled>
@@ -30,8 +61,16 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
                 </TitleStyled>
 
                 <ProductsWrapperStyled>
+                  {
 
-                    <ModalCartCard />
+                    cartItems.length ? (
+                      cartItems.map((item) => {
+                        return <ModalCartCard {...item} key={item.id} />
+                      })
+                      ) : ( <p> Carrito Vacio </p> )
+
+                  }
+                    
 
                 </ProductsWrapperStyled>
 
@@ -42,7 +81,7 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
                 
                 <TotalPrice>
                 <p>Precio Total:</p>
-                <span>$ 100</span>
+                <span>$ { totalPrice }</span>
                 </TotalPrice>
             
             
@@ -53,8 +92,8 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
             
             <ButtonContainerStyled>
 
-                <CartBuyBtn> Comprar ahora </CartBuyBtn>
-                <CartDeletBtn> Borrar carrito </CartDeletBtn>
+                <CartBuyBtn onClick={comprarTodo} disabled={ !cartItems.length } > Comprar ahora </CartBuyBtn>
+                <CartDeletBtn onClick={vaciarTodo} disabled={ !cartItems.length }> Borrar carrito </CartDeletBtn>
 
 
             </ButtonContainerStyled>
