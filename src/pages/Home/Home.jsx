@@ -9,6 +9,7 @@ import { Products } from './ProductsSectStyle';
 import ProductsCards from '../../components/Products/ProductsCards';
 import ProductCard from '../../components/Products/ProductCard';
 import Categories from '../../components/Categories/Categories';
+import ContactUs from '../../components/ContactUs/ContactUs';
 
 
 const HeroContainerStyled = styled.section`
@@ -54,6 +55,23 @@ const HeroH2 = styled.h2 `
   text-align:left;
 
 `;
+
+const ContactSectionSty = styled.section`
+  
+  display: flex;
+	align-items: center;
+	justify-content: center;
+  flex-direction: column;
+	/* flex-direction: column; */
+	width: 100%;
+	gap: 25px;
+	margin-bottom: 100px;
+	margin-top: 150px;
+  h2 {
+        font-size: 30px;
+    }
+
+`
 
 const Home = () => {
   return (
@@ -121,12 +139,21 @@ const Home = () => {
     </BenefitSectionStyle>
 
     <Products>
-
+      <h2> Productos </h2>
       <Categories />
       <ProductsCards />
       
 
     </Products>
+
+
+    <ContactSectionSty>
+
+      <h2> Contactanos </h2>
+      <ContactUs />
+
+
+    </ContactSectionSty>
 
     
     </>

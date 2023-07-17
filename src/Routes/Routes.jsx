@@ -5,8 +5,8 @@ import { BrowserRouter,
 } from "react-router-dom"
 import Layout from '../components/Layout/Layout'
 import Home from "../pages/Home/Home"
-import AboutUs from "../pages/AboutUs/AboutUs"
-import ContactUs from "../pages/ContactUs/ContactUs"
+import Ingresar from "../pages/Ingresar/Ingresar"
+import Registrate from "../pages/Registrate/Registrate"
 
 
 const Routes = () => {
@@ -18,8 +18,8 @@ const Routes = () => {
               <ReactDomRoutes>
   
                   <Route path='/' element={< Home />} />
-                  <Route path='AboutUs' element={< AboutUs />} />
-                  <Route path='ContactUs' element={< ContactUs />} />
+                  <Route path='Ingresar' element={< Ingresar />} />
+                  <Route path='Registrate' element={< Registrate />} />
                   <Route path='*' element={<p>Error 404 temporal</p>} />
   
               </ReactDomRoutes>

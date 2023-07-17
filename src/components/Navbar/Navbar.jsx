@@ -66,8 +66,8 @@ const Navbar = () => {
         <LinkContainer>
               
             <NavLinkStyled to="/">Home</NavLinkStyled>
-            <NavLinkStyled to="/AboutUs">Nostros</NavLinkStyled>
-            <NavLinkStyled to="/ContactUs">Contacto</NavLinkStyled>
+            <NavLinkStyled to="/Ingresar">Ingresar</NavLinkStyled>
+            <NavLinkStyled to="/Registrate">Registrate</NavLinkStyled>
 
             <CartNavStyled>
 

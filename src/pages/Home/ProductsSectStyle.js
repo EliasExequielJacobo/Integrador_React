@@ -7,9 +7,13 @@ export const Products = styled.section`
 	justify-content: center;
 	flex-direction: column;
 	width: 100%;
-	gap: 20px;
+	gap: 25px;
 	margin-bottom: 100px;
 	margin-top: 150px;
+
+	h2 {
+        font-size: 30px;
+    }
 `;
 
 // export const ProductsContainer = styled.div`
