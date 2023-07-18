@@ -26,3 +26,13 @@ export const LinkContainerStyled = styled.div`
   font-size: 1.2rem;
   color: white;
 `;
+
+export const MenuHamburNavStyled = styled.div`
+  gap: 15px;
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 1019px) {
+    display: contents;
+  }
+`;

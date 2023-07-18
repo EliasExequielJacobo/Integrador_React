@@ -6,9 +6,21 @@ export const ProductsContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	width: 1000px;
-	max-width: 1200px;
+	width: 95%;
+	max-width: 1050px;
 	gap: 20px;
+
+	@media (max-width: 768px) {
+        
+		width: 80%;
+
+    };
+
+	@media (max-width: 320px) {
+        
+		width: 75%;
+
+    };
     
 `;
 

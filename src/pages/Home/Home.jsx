@@ -22,6 +22,14 @@ const HeroContainerStyled = styled.section`
   margin: 0 auto;
   margin-bottom: 100px;
   margin-top: 120px;
+
+  @media (max-width: 1019px) {
+    img {
+
+      display: none;
+
+    }
+  }
   
 `;
 
@@ -31,6 +39,17 @@ const HeroTextCont = styled.div `
  align-items: start;
  flex-direction: column;
 
+ @media (max-width: 1019px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* @media (max-width: 499px) {
+    display: none;
+  } */
+
 `;
 
 
@@ -38,13 +57,25 @@ const HeroH1 = styled.h1 `
   
   font-size: 48px;
   width: 80%;
-  min-width: 500px;
+  /* min-width: 500px; */
   font-weight: 800;
   background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
 
+  @media (max-width: 1019px) {
+    width: 60%;
+    text-align: center;
+    font-size: 35px;
+  }
+
+ 
+
+   @media (max-width: 499px) {
+    width: 50%;
+    font-size: 30px;
+  } 
 
 `;
 
@@ -53,6 +84,20 @@ const HeroH2 = styled.h2 `
   font-size: 17px;
   width: 70%;
   text-align:left;
+
+  @media (max-width: 1019px) {
+    text-align: center;
+    width: 50%;
+    font-size: 20px;
+  }
+
+  
+
+  @media (max-width: 499px) {
+    width: 40%;
+    font-size: 15px;
+  } 
+  
 
 `;
 
@@ -70,6 +115,27 @@ const ContactSectionSty = styled.section`
   h2 {
         font-size: 30px;
     }
+
+    @media (max-width: 768px) {
+
+    h2 {
+
+      font-size: 25px;
+
+    }
+    
+    
+  }
+  
+  @media (max-width: 768px) {
+
+    h2 {
+
+      font-size: 20px;
+
+    }
+    
+  } 
 
 `
 

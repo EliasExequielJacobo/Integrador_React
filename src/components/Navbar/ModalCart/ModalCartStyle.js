@@ -20,6 +20,12 @@ export const ContainerStyled = styled(motion.div)`
   border-top: none;
   border-radius: 0 0 0 1rem;
   
+  @media (max-width: 450px) {
+
+    width: 300px;
+
+  } 
+
 `;
 
 export const CloseButtonContainerStyled = styled.div`
@@ -54,6 +60,29 @@ export const TitleStyled = styled.div`
     margin-top: 0;
   }
 
+  @media (max-width: 768px) {
+
+  h1 {
+
+    font-size: x-large;
+    font-weight: 600 ;
+
+  }
+
+}
+
+
+  @media (max-width: 450px) {
+
+    h1 {
+
+      font-size: large;
+      font-weight: 500 ;
+
+    }
+
+  }  
+
 `;
 
 export const MainContainerStyled = styled.div`
@@ -86,6 +115,12 @@ export const ProductsWrapperStyled = styled.div`
   @media (max-height: 800px) {
     height: 235px;
   }
+
+  @media (max-width: 450px) {
+
+    width: 90%;
+
+  } 
 
 `;
 
@@ -170,6 +205,13 @@ export const ProductCardCartContainerSty = styled.div `
     border-radius: 16px;
     object-fit: cover;
   }
+
+  @media (max-width: 450px) {
+
+    flex-direction: column;
+    width: 175px;
+
+  } 
 
 `;
 

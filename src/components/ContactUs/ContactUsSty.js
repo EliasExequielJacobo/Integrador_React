@@ -16,6 +16,15 @@ export const ContactCard = styled.div`
 	    width: 40%;
 
     }
+
+
+    @media (max-width: 992px) {
+        
+        img {
+            display: none;
+        }
+
+    }
 `
 export const ContactCardTextCont = styled.div`
 
@@ -39,5 +48,17 @@ export const ContacUsUl = styled.ul`
     color: white;
     font-size: large;
     font-weight: 700;
+
+    @media (max-width: 992px) {
+        
+            font-size: 15px;
+
+    }
+
+    @media (max-width: 320px) {
+        
+        font-size: 13px;
+
+}
 
 `

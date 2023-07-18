@@ -4,8 +4,10 @@ import styled from 'styled-components';
 
 import CartIcon from './CartIcon/CartIcon';
 import { NavLink } from 'react-router-dom';
-import { CartNavStyled } from './NavbarStyle';
+import { CartNavStyled, MenuHamburNavStyled } from './NavbarStyle';
 import ModalCart from './ModalCart/ModalCart';
+import ModalHambur from './ModalHambur/ModalHambur';
+import MenuHamburIcon from './MenuHamburIcon/MenuHamburIcon';
 
 
 
@@ -37,6 +39,10 @@ const NavLinkStyled = styled(NavLink)`
   &.active {
     color: #4747ff;
     font-weight: 600;}
+  
+    @media (max-width: 1019px) {
+    display: none;
+  }
 
   
 `;
@@ -50,13 +56,14 @@ height: 50px;
 
 const Navbar = () => {
 
-  // const [hiddenCart, setHiddenCart] = useState(true);
+  const [hiddenHambur, setHiddenHambur] = useState(true);
 
 
   return (
    
     
     <NavbarContainer>
+        <ModalHambur hiddenHambur={hiddenHambur} setHiddenHambur={setHiddenHambur} />
         <ModalCart />
 
         <LogoSty src={ logo } alt="8 bit logo" />
@@ -69,11 +76,20 @@ const Navbar = () => {
             <NavLinkStyled to="/Ingresar">Ingresar</NavLinkStyled>
             <NavLinkStyled to="/Registrate">Registrate</NavLinkStyled>
 
+
+            <MenuHamburNavStyled>
+
+              <MenuHamburIcon hiddenHambur={hiddenHambur} setHiddenHambur={setHiddenHambur} />
+
+            </MenuHamburNavStyled>
+
             <CartNavStyled>
 
               <CartIcon />
 
             </CartNavStyled>
+
+            
 
         </LinkContainer>
 

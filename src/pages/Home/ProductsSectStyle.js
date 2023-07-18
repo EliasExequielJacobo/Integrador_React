@@ -14,6 +14,25 @@ export const Products = styled.section`
 	h2 {
         font-size: 30px;
     }
+
+	@media (max-width: 768px) {
+     h2 {
+
+		font-size: 25px;
+
+	 }
+    
+  };
+  
+  @media (max-width: 768px) {
+
+  	 h2 {
+
+  	 font-size: 20px;
+
+	 }
+
+   };
 `;
 
 // export const ProductsContainer = styled.div`
