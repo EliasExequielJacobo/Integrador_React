@@ -7,6 +7,7 @@ import Layout from '../components/Layout/Layout'
 import Home from "../pages/Home/Home"
 import Ingresar from "../pages/Ingresar/Ingresar"
 import Registrate from "../pages/Registrate/Registrate"
+import Error404 from '../pages/Error404/Error404'
 
 
 const Routes = () => {
@@ -20,7 +21,7 @@ const Routes = () => {
                   <Route path='/' element={< Home />} />
                   <Route path='Ingresar' element={< Ingresar />} />
                   <Route path='Registrate' element={< Registrate />} />
-                  <Route path='*' element={<p>Error 404 temporal</p>} />
+                  <Route path='*' element={ <Error404 /> } />
   
               </ReactDomRoutes>
   

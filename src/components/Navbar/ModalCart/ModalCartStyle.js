@@ -163,7 +163,15 @@ export const CartBuyBtn = styled.button`
     &:disabled {
 		cursor: not-allowed;
 		color: gray;
-	}
+	  };
+
+    @media (max-width: 450px) {
+
+     font-size: 12px;
+
+    };
+
+
 
 `;
 
@@ -181,6 +189,12 @@ export const CartDeletBtn = styled.button`
 		cursor: not-allowed;
 		color: gray;
 	}
+   
+  @media (max-width: 450px) {
+
+   font-size: 12px;
+
+  };
 
 `;
 

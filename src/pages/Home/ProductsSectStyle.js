@@ -24,7 +24,7 @@ export const Products = styled.section`
     
   };
   
-  @media (max-width: 768px) {
+  @media (max-width: 320px) {
 
   	 h2 {
 
