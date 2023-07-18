@@ -1,11 +1,16 @@
 import React from 'react'
 import { AnimatePresence } from 'framer-motion';
 import { CloseButtonHamburContainerStyled, CloseButtonHamburStyled, MainContainerHamburSty, ModalHamburContainerSty, NavLinkStyHambur } from './ModalHamburSty';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { FaHome, FaKey, FaIdBadge } from "react-icons/fa";
+import { toggleHambur } from '../../../Redux/HamburRedux/hamburSlice';
 
 
-const ModalHambur = ({hiddenHambur, setHiddenHambur}) => {
+const ModalHambur = () => {
+  const hiddenHambur = useSelector (state => state.hambur.hiddenHambur)
+  const dispatch = useDispatch();
+
   return (
     <>
     
@@ -19,7 +24,7 @@ const ModalHambur = ({hiddenHambur, setHiddenHambur}) => {
             key='menu-hambur'
             >
 
-            <CloseButtonHamburContainerStyled onClick={() => setHiddenHambur(!hiddenHambur)}>
+            <CloseButtonHamburContainerStyled onClick={() => dispatch(toggleHambur())}>
                 
                 <CloseButtonHamburStyled>
                            x

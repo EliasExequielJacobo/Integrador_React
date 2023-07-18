@@ -56,14 +56,14 @@ height: 50px;
 
 const Navbar = () => {
 
-  const [hiddenHambur, setHiddenHambur] = useState(true);
+  // const [hiddenHambur, setHiddenHambur] = useState(true);
 
 
   return (
    
     
     <NavbarContainer>
-        <ModalHambur hiddenHambur={hiddenHambur} setHiddenHambur={setHiddenHambur} />
+        <ModalHambur  />
         <ModalCart />
 
         <LogoSty src={ logo } alt="8 bit logo" />
@@ -79,7 +79,7 @@ const Navbar = () => {
 
             <MenuHamburNavStyled>
 
-              <MenuHamburIcon hiddenHambur={hiddenHambur} setHiddenHambur={setHiddenHambur} />
+              <MenuHamburIcon  />
 
             </MenuHamburNavStyled>
 
