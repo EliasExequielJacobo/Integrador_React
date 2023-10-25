@@ -8,6 +8,7 @@ import Home from "../pages/Home/Home"
 import Ingresar from "../pages/Ingresar/Ingresar"
 import Registrate from "../pages/Registrate/Registrate"
 import Error404 from '../pages/Error404/Error404'
+import Verify from '../pages/Verify/Verify'
 
 
 const Routes = () => {
@@ -22,7 +23,8 @@ const Routes = () => {
                   <Route path='Ingresar' element={< Ingresar />} />
                   <Route path='Registrate' element={< Registrate />} />
                   <Route path='*' element={ <Error404 /> } />
-  
+                  <Route path='Verficarse' element={ <Verify /> } />
+                    
               </ReactDomRoutes>
   
           </Layout>

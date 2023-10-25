@@ -37,6 +37,16 @@ export const NavLinkStyHambur = styled(NavLink)`
   
 `;
 
+export const NavLinkStyHamburExit = styled(NavLink)`
+  color: rgb(178,34,34);
+  text-decoration: none;
+  /* &.active {
+    color: #4747ff;
+    font-weight: 600;} */
+
+  
+`;
+
 export const CloseButtonHamburContainerStyled = styled.div`
 
   display: flex;

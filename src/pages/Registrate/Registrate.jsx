@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Form as FormikForm } from "formik";
 import {Formik, useFormik} from "formik";
 import * as Yup from "yup";
+import { createUser } from '../../axios/axiosUser';
 
 
 const RegisterSection = styled.section`
@@ -75,10 +76,12 @@ const Registrate = () => {
 
         validationSchema={validationSchema}
 
-        onSubmit={(values, {resetForm}) => {
-          console.log(values);
-          resetForm();
-          navigate("/")
+        onSubmit={ async (values, actions) => {
+          const user = await createUser(values.name, values.email, values.password);
+          actions.resetForm();
+          if(user) {
+            navigate("/Ingresar")
+          }
         }}
         
         >

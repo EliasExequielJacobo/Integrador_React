@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import Input from '../../components/UI/Input/Input';
 import LogInBtn from '../../components/UI/ButtonForms/LogInBtn';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "../../Redux/user/userSlice"
 
 import { Form as FormikForm } from "formik";
 import {Formik, useFormik} from "formik";
 import * as Yup from "yup";
+import { loginUser } from '../../axios/axiosUser';
 
 const LogInSection = styled.section`
   
@@ -52,6 +55,8 @@ const validationSchema = Yup.object({
 });
 
 const Ingresar = () => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   return (
@@ -71,10 +76,15 @@ const Ingresar = () => {
 
         validationSchema={validationSchema}
 
-        onSubmit={(values, {resetForm}) => {
-          console.log(values);
-          resetForm();
-          navigate("/")
+        onSubmit={ async (values) => {
+          const user = await loginUser(values.email, values.password);
+          
+          if(user) {
+            dispatch(setCurrentUser({
+              ...user.usuario,
+              token: user.token
+            })) 
+          }
         }}
         
         >
