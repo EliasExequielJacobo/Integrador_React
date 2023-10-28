@@ -52,22 +52,18 @@ const validationSchema = Yup.object({
 
 
 
-const PurchaseForm = ({cartItems, price}) => {
+const PurchaseForm = ({cartItems, total}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {currentUser} = useSelector(state => state.user);
-
-
-
-
+    
+    
   return (
     <>
     
     <PurchaseFormSection>
 
         <PurchaseFormContainer>
-
-            
             <Formik
             initialValues= {{
                 name: '',
@@ -81,15 +77,15 @@ const PurchaseForm = ({cartItems, price}) => {
             onSubmit={ async (values) => {
               const orderData = {
                 items: cartItems,
-                price,
-                total: price,
+                total: total,
                 shippingDetails: {
                   ...values
                 }
               };
-
+              
               try {
                 await createOrder(orderData, dispatch, currentUser);
+                console.log(orderData);
                 // alert("Compra exitosa, muchas gracias, puedes ver el estado de tu pedido en Mis Compras");
                 navigate("/")
                 dispatch(borrarCarrito());

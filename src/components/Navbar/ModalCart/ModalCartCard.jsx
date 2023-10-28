@@ -3,7 +3,7 @@ import { CardQuantityContainerSty, CartCardBtn, CartCardCountSty, CartCardPriceS
 import { useDispatch } from 'react-redux'
 import { addToCart, removeItem } from '../../../Redux/cart/cartSlice';
 
-const ModalCartCard = ({name,img,id,bid,quantity}) => {
+const ModalCartCard = ({name,img,id,price,quantity,title}) => {
   const dispatch = useDispatch();
 
 
@@ -17,7 +17,7 @@ const ModalCartCard = ({name,img,id,bid,quantity}) => {
 
             
          <CartCardTitleStyled> {name} </CartCardTitleStyled>
-         <CartCardPriceStyled> $ {bid} </CartCardPriceStyled>
+         <CartCardPriceStyled> $ {price} </CartCardPriceStyled>
         
          <CardQuantityContainerSty>
 
@@ -26,7 +26,7 @@ const ModalCartCard = ({name,img,id,bid,quantity}) => {
             <CartCardCountSty> {quantity} </CartCardCountSty>
 
             
-            <CartCardBtn onClick={() => dispatch(addToCart({name,img,id,bid,quantity}))}> + </CartCardBtn>
+            <CartCardBtn onClick={() => dispatch(addToCart({name,img,id,price,quantity,title}))}> + </CartCardBtn>
 
          </CardQuantityContainerSty>
 

@@ -14,7 +14,7 @@ const ModalCart = () => {
   const { cartItems } = useSelector ( state => state.cart );
 
   const totalPrice = cartItems.reduce((acc, item) =>{
-    return (acc += item.bid * item.quantity)
+    return (acc += item.price * item.quantity)
   }, 0)
 
   const confirmarVaciarCarrito = (confirmMsg, succesMsg) =>{

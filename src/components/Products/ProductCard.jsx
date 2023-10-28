@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from '../../Redux/cart/cartSlice';
 
 
-const ProductCard = ({name, img, bid, subTitle, id}) => {
+const ProductCard = ({name, img, id,title, price}) => {
 
   const dispatch = useDispatch();
 
@@ -26,15 +26,15 @@ const ProductCard = ({name, img, bid, subTitle, id}) => {
         <ProductsInfoCont>
 
         <ProductsName> { name } </ProductsName>
-        <p> { subTitle } </p>
+        <p> { title } </p>
 
         </ProductsInfoCont>
         
     
         <ProductsPriceCont>
 
-        <ProductsPrice> $ { bid } </ProductsPrice>
-        <ProductsCardButton onClick={() => dispatch(addToCart({name, img, bid, subTitle, id}))} > Add </ProductsCardButton>
+        <ProductsPrice> $ { price } </ProductsPrice>
+        <ProductsCardButton onClick={() => dispatch(addToCart({name, img, price, title, id}))} > Add </ProductsCardButton>
 
         </ProductsPriceCont>
 

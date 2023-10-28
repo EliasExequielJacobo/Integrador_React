@@ -22,10 +22,9 @@ const PurchaseFormPage = () => {
 
     useRedirectPurchase("/Ingresar")
 
-    const price = cartItems.reduce((acc, item) =>{
-        return (acc += item.price * item.quantity)
-    }, 0)
-
+    const total = cartItems.reduce((acc, item) =>{
+      return (acc += item.price * item.quantity)
+  }, 0)
 
   return (
 
@@ -34,7 +33,7 @@ const PurchaseFormPage = () => {
         <ContainerPurchaseFormPageStyled>
             <PurchaseForm
               cartItems={cartItems} 
-              price={price}
+              total={total}
             />
         </ContainerPurchaseFormPageStyled>
     </div>
