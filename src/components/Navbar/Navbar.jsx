@@ -133,7 +133,7 @@ const Navbar = () => {
               
             <NavLinkStyled to="/">Home</NavLinkStyled>
             {currentUser ? <UserNameStyled>{currentUser.nombre}</UserNameStyled> : <NavLinkStyled to="/Ingresar">Ingresar</NavLinkStyled>}
-            {currentUser ? <MisComprasStyled to="/">Mis compras</MisComprasStyled> : <NavLinkStyled to="/Registrate">Registrate</NavLinkStyled>}
+            {currentUser ? <MisComprasStyled to="/MisCompras">Mis compras</MisComprasStyled> : <NavLinkStyled to="/Registrate">Registrate</NavLinkStyled>}
             <VerifyNavStyled to="/Verficarse">{currentUser ? <div>Verificarse</div> : null}</VerifyNavStyled>
             <LogOutStyled to="/">{currentUser ? <div><span onClick={() =>{dispatch(setCurrentUser(null))}}>Cerrar sesion</span></div> : null}</LogOutStyled>
             

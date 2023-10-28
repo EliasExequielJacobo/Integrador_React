@@ -3,11 +3,13 @@ import { AnimatePresence } from 'framer-motion';
 import { ButtonContainerStyled, CartBuyBtn, CartDeletBtn, CloseButtonContainerStyled, CloseButtonStyled, ContainerStyled, MainContainerStyled, PriceContainerStyled, ProductsWrapperStyled, TitleStyled, TotalPrice } from './ModalCartStyle';
 import ModalCartCard from './ModalCartCard';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { borrarCarrito, clearCart, mostrarCarrito } from '../../../Redux/cart/cartSlice';
 
 const ModalCart = () => {
   const hiddenCart = useSelector (state => state.cart.hidden)
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { cartItems } = useSelector ( state => state.cart );
 
@@ -92,7 +94,7 @@ const ModalCart = () => {
             
             <ButtonContainerStyled>
 
-                <CartBuyBtn onClick={comprarTodo} disabled={ !cartItems.length } > Comprar ahora </CartBuyBtn>
+                <CartBuyBtn onClick={() => { navigate('/FormularioCompra'); dispatch(mostrarCarrito()) }} disabled={ !cartItems.length } > Comprar ahora </CartBuyBtn>
                 <CartDeletBtn onClick={vaciarTodo} disabled={ !cartItems.length }> Borrar carrito </CartDeletBtn>
 
 
