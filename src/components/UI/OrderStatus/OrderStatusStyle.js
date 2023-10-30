@@ -6,8 +6,8 @@ export const StatusStyled = styled.span`
   text-align: center;
   position: absolute;
   width: 2rem;
-  height: 1rem;
-  top: 1rem;
+  height: 1.5rem;
+  top: 2.4rem;
   right: 1rem;
   border-radius: 1rem;
   padding: 0.3rem;

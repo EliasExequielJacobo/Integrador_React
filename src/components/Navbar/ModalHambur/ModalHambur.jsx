@@ -1,10 +1,10 @@
 import React from 'react'
 import { AnimatePresence } from 'framer-motion';
-import { CloseButtonHamburContainerStyled, CloseButtonHamburStyled, MainContainerHamburSty, ModalHamburContainerSty, NavLinkStyHambur, NavLinkStyHamburExit } from './ModalHamburSty';
+import { CloseButtonHamburContainerStyled, CloseButtonHamburStyled, MainContainerHamburSty, ModalHamburContainerSty, NavLinkStyHambur, NavLinkStyHamburExit, VerifyHamburNavStyled } from './ModalHamburSty';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-import { FaHome, FaKey, FaIdBadge } from "react-icons/fa";
+import { FaHome, FaKey, FaIdBadge, FaRegListAlt, FaRegCheckSquare, FaRegWindowClose } from "react-icons/fa";
 import { toggleHambur } from '../../../Redux/HamburRedux/hamburSlice';
 import { setCurrentUser } from '../../../Redux/user/userSlice';
 
@@ -41,9 +41,10 @@ const ModalHambur = () => {
             <MainContainerHamburSty>
 
             <NavLinkStyHambur to="/"> <FaHome /> Home </NavLinkStyHambur>
-            {currentUser ? `${currentUser.nombre}` : <NavLinkStyHambur to="/Ingresar"> <FaKey /> Ingresar </NavLinkStyHambur>}
-            {currentUser ? <div>Mis compras</div>  : <NavLinkStyHambur to="/Registrate"> <FaIdBadge /> Registrate </NavLinkStyHambur>}
-            <NavLinkStyHamburExit to="/">{currentUser ? <div><span onClick={() =>{dispatch(setCurrentUser(null))}}>Cerrar sesion</span></div> : null}</NavLinkStyHamburExit>
+            {currentUser ? <div><FaIdBadge /> {currentUser.nombre}</div> : <NavLinkStyHambur to="/Ingresar"> <FaKey /> Ingresar </NavLinkStyHambur>}
+            {currentUser ? <div><FaRegListAlt /> Mis compras</div>  : <NavLinkStyHambur to="/Registrate"> <FaIdBadge /> Registrate </NavLinkStyHambur>}
+            <VerifyHamburNavStyled to="/Verficarse">{currentUser ? <div><FaRegCheckSquare /> <span>Verificarse</span></div> : null}</VerifyHamburNavStyled>
+            <NavLinkStyHamburExit to="/">{currentUser ? <div><FaRegWindowClose /> <span onClick={() =>{dispatch(setCurrentUser(null))}}>Cerrar sesion</span></div> : null}</NavLinkStyHamburExit>
 
             </MainContainerHamburSty>
 

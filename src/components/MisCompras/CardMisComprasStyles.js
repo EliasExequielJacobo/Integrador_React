@@ -13,7 +13,7 @@ export const MisComprasContainerStyled = styled.div`
 `;
 
 export const PedidoContainerStyled = styled.div`
-  background: grey;
+  background: #f1f1;
   width: 380px;
   border-radius: 15px;
   padding: 1rem 1.4rem;
@@ -42,5 +42,12 @@ export const IdStyled = styled.p`
 export const PriceStyled = styled.p`
   font-weight: 800;
   font-size: 2rem;
-  background: white;
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+  @media (max-width: 760px) {
+    font-size: 1.6rem;
+  }
 `;
