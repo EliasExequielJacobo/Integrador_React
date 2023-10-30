@@ -31,12 +31,17 @@ const FormContainer = styled.div`
 
 `
 
-const RecordtorioCode = styled.h3`
+const RecordtorioCode = styled.div`
   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   font-size: 15px;
   color: white;
   opacity: 0.2;
-  text-align: justify;
+  
 
 `
 
@@ -47,6 +52,15 @@ const Form = styled(FormikForm)`
   justify-content: center;
   align-items: center;
   gap: 25px;
+
+`
+const VerifyTitle = styled.div`
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
 `
 
@@ -99,12 +113,12 @@ const Verify = () => {
     <Form>
 
 
-    <h2>Verficica tu cuenta aqui porfavor</h2>
+    <VerifyTitle><h2>Verficica tu cuenta aqui porfavor</h2></VerifyTitle>
     <Input isError={errors.email & touched.email} name="email" label="Correo electronico" type="email" ></Input>
     <Input isError={errors.code & touched.code} name="code" label="Code" type="text"></Input>
     <SubmitBtn />
-    <RecordtorioCode> *El codigo de verficiacacion se envio a su email con el que se registro,
-      de no econtrarse en la bandeja de entrada, revisar la seccion de spam. </RecordtorioCode>
+    <RecordtorioCode><h3> *El codigo de verficiacacion se envio a su email con el que se registro,
+      de no econtrarse en la bandeja de entrada, revisar la seccion de spam.</h3> </RecordtorioCode>
 
     </Form>
 

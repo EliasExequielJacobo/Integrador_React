@@ -66,9 +66,9 @@ const LogOutStyled = styled(NavLink)`
 const VerifyNavStyled = styled(NavLink)`
   color: white;
   text-decoration: none;
-  /* &.active {
-    color: rgb(178,34,34);
-    font-weight: 600;} */
+  &.active {
+    color: #4747ff;
+    font-weight: 600;}
   
     @media (max-width: 1019px) {
     display: none;
@@ -80,9 +80,9 @@ const VerifyNavStyled = styled(NavLink)`
 const MisComprasStyled = styled(NavLink)`
   color: white;
   text-decoration: none;
-  /* &.active {
+  &.active {
     color: #4747ff;
-    font-weight: 600;} */
+    font-weight: 600;}
   
     @media (max-width: 1019px) {
     display: none;
